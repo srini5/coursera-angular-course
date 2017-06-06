@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="firstApp">
   <head>
     <meta charset="utf-8">
-    <title>Hello Coursera</title>
+    <title>Name Calculator</title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </head>
-  <body>
-    <h1>Coursera, hello students what's up</h1>
+  <body ng-controller="nameController">
+    <h1>This is a name calculator</h1>
+    <h2>The numerical value of your name is: {{calculate()}}</h2>
+    Please enter your name: <input type="text" name="name" ng-model="name" placeholder="Enter name here">
   </body>
 </html>
