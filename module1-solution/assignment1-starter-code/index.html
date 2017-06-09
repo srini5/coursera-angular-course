@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .message-green { color: green;}
+      .message-red { color: red;}
+      .border-red {border: 1px solid red;}
+      .border-green {border: 1px solid green;}
     </style>
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -15,15 +19,20 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
+           <div ng-class = "{'border-green': messageGreen , 'border-red': messageRed}">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control" ng-model="lunchItemsList">
+           </div>
+         </div>
+         <div class="form-group">
+           <p>Note: Items of 0 length after trimming the empty spaces are not considered (i.e. "   ,    , " will result in count=0).</p>
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkIfTooMuch()">Check If Too Much</button>
          </div>
          <div class="form-group message">
-              {{message}}
+              <p ng-class= "{'message-green': messageGreen , 'message-red': messageRed}"> {{message}} </p>
          </div>
    </div>
 

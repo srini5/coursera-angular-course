@@ -21,10 +21,16 @@
         console.log(itemCount);
         if(itemCount == 0){
             $scope.message = "Please enter data first";
+            $scope.messageRed = true;
+            $scope.messageGreen = false;
         } else if(itemCount <=3){
             $scope.message = "Enjoy!";
+            $scope.messageRed = false;
+            $scope.messageGreen = true;
         } else if (itemCount >3) {
             $scope.message = "Too much!";
+            $scope.messageRed = false;
+            $scope.messageGreen = true;
         }
       };
   };
